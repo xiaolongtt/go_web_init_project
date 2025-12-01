@@ -1,0 +1,20 @@
+{"level":"DEBUG","time":"2025-12-01T00:06:01.711+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"ERROR","time":"2025-12-01T00:06:01.721+0800","caller":"mysql/mysql.go:24","msg":"init mysql fail","error":"dial tcp :0: connectex: The requested address is not valid in its context."}
+{"level":"DEBUG","time":"2025-12-01T00:11:26.746+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"ERROR","time":"2025-12-01T00:11:26.820+0800","caller":"mysql/mysql.go:24","msg":"init mysql fail","error":"Error 1049 (42000): Unknown database 'web_app'"}
+{"level":"DEBUG","time":"2025-12-01T00:11:40.418+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"ERROR","time":"2025-12-01T00:11:40.429+0800","caller":"mysql/mysql.go:24","msg":"init mysql fail","error":"Error 1049 (42000): Unknown database 'web_app'"}
+{"level":"DEBUG","time":"2025-12-01T00:15:05.852+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"ERROR","time":"2025-12-01T00:15:05.867+0800","caller":"mysql/mysql.go:24","msg":"init mysql fail","error":"Error 1049 (42000): Unknown database 'web_app'"}
+{"level":"DEBUG","time":"2025-12-01T09:58:09.951+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"ERROR","time":"2025-12-01T09:58:10.017+0800","caller":"mysql/mysql.go:24","msg":"init mysql fail","error":"Error 1049 (42000): Unknown database 'web_app'"}
+{"level":"DEBUG","time":"2025-12-01T10:10:07.254+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:16:42.584+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:17:33.018+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:19:23.124+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:19:34.314+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:19:47.335+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:20:53.044+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"DEBUG","time":"2025-12-01T10:21:42.893+0800","caller":"web_app_go/main.go:27","msg":"init logger success"}
+{"level":"INFO","time":"2025-12-01T10:21:46.532+0800","caller":"logger/logger.go:70","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0","errors":"","cost":0.0005074}
+{"level":"INFO","time":"2025-12-01T10:21:46.760+0800","caller":"logger/logger.go:70","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0","errors":"","cost":0}
