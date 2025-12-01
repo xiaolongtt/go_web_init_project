@@ -3,8 +3,8 @@ package mysql
 import (
 	"database/sql"
 	"fmt"
+	"web_app_go/settings"
 
-	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -15,13 +15,13 @@ var (
 	sqlDB *sql.DB
 )
 
-func InitMysql() (err error) {
+func InitMysql(cfg *settings.MySQLConfig) (err error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		viper.GetString("datasource.mysql.username"),
-		viper.GetString("datasource.mysql.password"),
-		viper.GetString("datasource.mysql.host"),
-		viper.GetString("datasource.mysql.port"),
-		viper.GetString("datasource.mysql.dbName"),
+		cfg.UserName,
+		cfg.Password,
+		cfg.Host,
+		cfg.Port,
+		cfg.DbName,
 	)
 	Db, err = gorm.Open(mysql.Open(dsn))
 	if err != nil {
@@ -31,9 +31,9 @@ func InitMysql() (err error) {
 	if err != nil {
 		zap.L().Error("init mysql fail", zap.Error(err))
 	}
-	sqlDB.SetMaxIdleConns(viper.GetInt("datasource.mysql.max_idle_conns"))
-	sqlDB.SetMaxOpenConns(viper.GetInt("datasource.mysql.max_open_conns"))
-	sqlDB.SetConnMaxLifetime(viper.GetDuration("datasource.mysql.max_lifetime"))
+	sqlDB.SetMaxIdleConns(cfg.MaxIdleConns)
+	sqlDB.SetMaxOpenConns(cfg.MaxOpenConns)
+	sqlDB.SetConnMaxLifetime(cfg.MaxLifeTime)
 	return
 }
 

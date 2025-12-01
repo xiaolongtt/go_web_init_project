@@ -4,21 +4,19 @@ import (
 	"context"
 	"fmt"
 	"time"
+	"web_app_go/settings"
 
 	"github.com/redis/go-redis/v9"
-	"github.com/spf13/viper"
 )
 
 var RedisClient *redis.Client
 
-func InitRedis() (err error) {
-	addr := fmt.Sprintf("%s:%d", viper.GetString("datasource.redis.host"), viper.GetInt("datasource.redis.port"))
-	fmt.Println("redis addr:", addr)
+func InitRedis(cfg *settings.RedisConfig) (err error) {
+	addr := fmt.Sprintf("%s:%d", cfg.Host, cfg.Port)
 	RedisClient = redis.NewClient(&redis.Options{
-		Addr: addr,
-		//Password: viper.GetString("datasource.redis.password"),
-		DB:       viper.GetInt("datasource.redis.database"),
-		PoolSize: viper.GetInt("datasource.redis.pool_size"),
+		Addr:     addr,
+		DB:       cfg.DB,
+		PoolSize: cfg.PoolSize,
 	})
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()

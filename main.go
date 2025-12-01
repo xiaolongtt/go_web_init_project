@@ -20,17 +20,17 @@ func main() {
 		return
 	}
 	//2.初始化日志
-	if err := logger.InitLogger(); err != nil {
+	if err := logger.InitLogger(settings.Conf.LogConfig); err != nil {
 		fmt.Printf("init logger failed,err:%v\n", err)
 		return
 	}
 	zap.L().Debug("init logger success")
 	//3.连接数据库，redis和mysql
-	if err := mysql.InitMysql(); err != nil {
+	if err := mysql.InitMysql(settings.Conf.MySQLConfig); err != nil {
 		fmt.Printf("init mysql failed,err:%v\n", err)
 		return
 	}
-	if err := redis.InitRedis(); err != nil {
+	if err := redis.InitRedis(settings.Conf.RedisConfig); err != nil {
 		fmt.Printf("init redis failed,err:%v\n", err)
 		return
 	}

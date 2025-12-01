@@ -9,20 +9,18 @@ log:
   max_age: 30
   max_backups: 7
 
-
-datasource:
-  mysql:
-    host: 127.0.0.1
-    port: 3306
-    username: root
-    password: 123456
-    dbName: web_app
-    max_open_conns: 200
-    max_idle_conns: 100
-    max_lifetime: 1h
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    database: 0
-    pool_size: 10
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: 123456
+  dbName: web_app
+  max_open_conns: 200
+  max_idle_conns: 100
+  max_lifetime: 1h
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+  pool_size: 10
 
